@@ -8,6 +8,7 @@ namespace RockContent.DataAccessLayer.DbContexts
 {
    public class RockContentDbContext:DbContext
     {
+
         public RockContentDbContext(DbContextOptions<RockContentDbContext> options)
              : base(options)
         {

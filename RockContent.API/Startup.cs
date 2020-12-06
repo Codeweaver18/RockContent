@@ -2,10 +2,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RockContent.DataAccessLayer.DbContexts;
+using RockContent.DataAccessLayer.Entities;
+using RockContent.DataAccessLayer.Interfaces;
+using RockContent.DataAccessLayer.Respositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +30,12 @@ namespace RockContent.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //configuring dbcontext
+            var cxn = Configuration["DbconnectionString"].ToString();
+
+            services.AddDbContext<RockContentDbContext>(options =>options.UseSqlServer(cxn));
+
+            services.AddTransient<IPostLikesRepository, PostLikesRepository<PostLikes>>();
             services.AddControllers();
 
         }
