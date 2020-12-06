@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.API", "RockCont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.Core", "RockContent.Core\RockContent.Core.csproj", "{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.DataAccessLayer", "RockContent.DataAccessLayer\RockContent.DataAccessLayer.csproj", "{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.Common", "RockContent.Common\RockContent.Common.csproj", "{3C40E622-DDFA-4622-9B99-72A2002E5AAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
