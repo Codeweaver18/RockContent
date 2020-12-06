@@ -13,5 +13,8 @@ namespace RockContent.DataAccessLayer.DbContexts
         {
             Database.Migrate();
         }
+
+        public DbSet<PostLikes> PostLikes { get; set; }
+
     }
 }
