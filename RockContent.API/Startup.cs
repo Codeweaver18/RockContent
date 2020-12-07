@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RockContent.Core.Interfaces;
+using RockContent.Core.Services;
 using RockContent.DataAccessLayer.DbContexts;
 using RockContent.DataAccessLayer.Entities;
 using RockContent.DataAccessLayer.Interfaces;
@@ -36,6 +38,7 @@ namespace RockContent.API
             services.AddDbContext<RockContentDbContext>(options =>options.UseSqlServer(cxn));
 
             services.AddTransient<IPostLikesRepository, PostLikesRepository<PostLikes>>();
+            services.AddTransient<ILikePostServiceAsync, LikePostServiceAsync>();
             services.AddControllers();
 
         }

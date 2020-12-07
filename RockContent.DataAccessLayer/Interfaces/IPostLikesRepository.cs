@@ -9,8 +9,9 @@ namespace RockContent.DataAccessLayer.Interfaces
    public interface IPostLikesRepository:IGenericRepository<PostLikes>
     {
 
-        PostLikes GetLikesByUserIp(string IpAddress);
-        List<PostLikes> GetAllLikes(int Limit=10);
-
+        Task<PostLikes> GetLikesByUserIpAsync(string IpAddress);
+        Task<List<PostLikes>> GetAllLikesAsync(int Limit=10);
+        Task<List<PostLikes>> GetLikesByUserIpAndPostIdAsync(string IpAddress, string PostId);
+        Task<int> GetAllLikesCountByPostIdAsync(string postId); 
     }
 }
