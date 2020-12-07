@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Linq;
 namespace RockContent.DataAccessLayer.Respositories
 {
 
@@ -35,32 +35,8 @@ namespace RockContent.DataAccessLayer.Respositories
             return entity;
         }
 
-        public async Task<bool> Delete(int id)
-        {
-            var entity = await GetById(id);
-            var res = false;
-            _dbContext.Set<TEntity>().Remove(entity);
-            var result = await _dbContext.SaveChangesAsync();
-            if (result > 0)
-            {
-                res = true;
-            }
-            return res;
-        }
 
-        public IQueryable<TEntity> GetAll()
-        {
-            return _dbContext.Set<TEntity>().AsNoTracking();
-        }
-
-
-        public async Task<TEntity> GetById(int id)
-        {
-            return await _dbContext.Set<TEntity>()
-                        .AsNoTracking()
-                        .FirstOrDefaultAsync();
-        }
-
+        
         public async Task<int> SaveShangesAsync()
         {
             return await _dbContext.SaveChangesAsync();
