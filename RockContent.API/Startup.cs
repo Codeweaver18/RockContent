@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using RockContent.Core.Interfaces;
 using RockContent.Core.Services;
 using RockContent.DataAccessLayer.DbContexts;
@@ -24,6 +25,8 @@ namespace RockContent.API
     {
         public Startup(IConfiguration configuration)
         {
+          
+
             Configuration = configuration;
         }
 
@@ -40,6 +43,15 @@ namespace RockContent.API
             services.AddTransient<IPostLikesRepository, PostLikesRepository<PostLikes>>();
             services.AddTransient<ILikePostServiceAsync, LikePostServiceAsync>();
             services.AddControllers();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("V1", new OpenApiInfo
+                {
+                    Title = "Rocket Content  Test API's",
+                    Version = "V1",
+                    Description = "Rocket Content Like Button Test API",
+                });
+            });
 
         }
 
@@ -61,6 +73,9 @@ namespace RockContent.API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/V1/swagger.json", "Rocket Content  Test API's"));
         }
     }
 }

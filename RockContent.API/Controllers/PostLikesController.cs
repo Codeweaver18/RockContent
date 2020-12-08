@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RockContent.Core.Interfaces;
 using RockContent.Core.Response;
 using System;
@@ -14,9 +15,12 @@ namespace RockContent.API.Controllers
     public class PostLikesController : ControllerBase
     {
         private readonly ILikePostServiceAsync _PostLikesService;
-        public PostLikesController(ILikePostServiceAsync postLikeService)
+        private readonly ILogger<PostLikesController> _logger;
+
+        public PostLikesController(ILikePostServiceAsync postLikeService, ILogger<PostLikesController> logger)
         {
             _PostLikesService = postLikeService;
+            _logger = logger;
         }
 
 
@@ -29,14 +33,15 @@ namespace RockContent.API.Controllers
             {
                 var result = await _PostLikesService.GetAllLikesCountByPostIdAsync(postID);
 
-                //log this information here
+                _logger.LogInformation(result.ToString());
                 response = result;
                 return Ok(response);
+
             }
             catch (Exception ex)
             {
-                throw ex;
-                //log error iformation here
+                _logger.LogError(ex.Message);
+
             }
 
             return StatusCode(500, response);
@@ -56,16 +61,15 @@ namespace RockContent.API.Controllers
                     PostId = PostID
                 });
 
-                //log this information here
+                _logger.LogInformation(result.ToString());
                 response = result;
                 return Ok(response);
             }
             catch (Exception ex)
             {
 
-                throw ex;
 
-                //log error iformation here
+                _logger.LogError(ex.Message);
             }
 
             return StatusCode(500, response);
