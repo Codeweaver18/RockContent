@@ -1,0 +1,21 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RocketContent.API-deployment
+  labels:
+    app: RocketContent.API
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: RocketContent.API
+  template:
+    metadata:
+      labels:
+        app: RocketContent.API
+    spec:
+      containers:
+      - name: rockcontentapi
+        image: rockcontentapi:dev
+        ports:
+        - containerPort: 80
