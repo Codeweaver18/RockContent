@@ -12,7 +12,7 @@ namespace RockContent.DataAccessLayer.DbContexts
         {
             var optionsBuilder = new DbContextOptionsBuilder<RockContentDbContext>();
             //TODO: This is very Insecure, sore this in Config or secrets vault
-            optionsBuilder.UseSqlServer("Server=localhost;Database=RockContent;Persist Security Info=True;User ID=Rockcontent;Password=password;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server = rockcontent.co4w2pitps4s.us-east-1.rds.amazonaws.com; Database = RockContent; Persist Security Info = True; User ID = rockcontent; Password = password; MultipleActiveResultSets = true");
             return new RockContentDbContext(optionsBuilder.Options);
         }
     }
