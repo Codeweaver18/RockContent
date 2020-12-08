@@ -31,6 +31,7 @@ namespace RockContent.API.Controllers
             var response = new  TotalLikedPostResponse();
             try
             {
+                _logger.LogInformation($"Fetching Likes Count for POSTID::{postID}");
                 var result = await _PostLikesService.GetAllLikesCountByPostIdAsync(postID);
 
                 _logger.LogInformation(result.ToString());

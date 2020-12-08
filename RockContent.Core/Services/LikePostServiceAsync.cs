@@ -23,7 +23,7 @@ namespace RockContent.Core.Services
         /// <param name="PostId"></param>
         /// <param name="UserIP"></param>
         /// <returns></returns>
-        private async Task<bool> CheckDuplicateTaskAsync(string PostId, string UserIP)
+        public async Task<bool> CheckDuplicateTaskAsync(string PostId, string UserIP)
         {
             var response = false;
             try
@@ -122,10 +122,6 @@ namespace RockContent.Core.Services
             return response;
         }
 
-        Task<bool> ILikePostServiceAsync.CheckDuplicateTaskAsync(string PostId, string UserIP)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

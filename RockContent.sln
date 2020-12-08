@@ -3,13 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.API", "RockContent.API\RockContent.API.csproj", "{38CC5384-34D8-44B0-B31E-5E1E4EF7C205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContent.API", "RockContent.API\RockContent.API.csproj", "{38CC5384-34D8-44B0-B31E-5E1E4EF7C205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.Core", "RockContent.Core\RockContent.Core.csproj", "{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContent.Core", "RockContent.Core\RockContent.Core.csproj", "{F89FC2B0-B369-47D7-AD4D-7BC64553F3BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.DataAccessLayer", "RockContent.DataAccessLayer\RockContent.DataAccessLayer.csproj", "{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockContent.DataAccessLayer", "RockContent.DataAccessLayer\RockContent.DataAccessLayer.csproj", "{C99B29F8-2F79-43F7-AEB5-FBBC0B99EE78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.Common", "RockContent.Common\RockContent.Common.csproj", "{3C40E622-DDFA-4622-9B99-72A2002E5AAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF294E46-A359-4E77-9727-150F71A869D8}"
+	ProjectSection(SolutionItems) = preProject
+		readMe.Md = readMe.Md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{130C4D49-E43B-4B4B-994D-3786502C1427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockContent.Testing", "RockContent.Testing\RockContent.Testing.csproj", "{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +42,16 @@ Global
 		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C40E622-DDFA-4622-9B99-72A2002E5AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12AC15B7-BA4E-4B29-88E2-FB2C1B1A14EF} = {130C4D49-E43B-4B4B-994D-3786502C1427}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D2F9D25-8CCC-4EDA-8A1F-2E44E6FE2542}
